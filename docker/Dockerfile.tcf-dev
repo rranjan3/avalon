@@ -46,6 +46,7 @@ RUN apt-get update \
     git \
     make \
     pkg-config \
+    vim \
     cmake \
     protobuf-compiler \
     libprotobuf-dev \
@@ -196,7 +197,7 @@ ENV DISPLAY=:0
 
 WORKDIR /project/TrustedComputeFramework/tools/build
 
-RUN make lint && echo "LINT SUCCESS"
+#RUN make lint && echo "LINT SUCCESS"
 
 RUN if [ "$MAKECLEAN" != 0 ]; then echo "Clean build" && make clean; fi \
  && make \
